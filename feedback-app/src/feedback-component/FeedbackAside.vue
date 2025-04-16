@@ -18,5 +18,21 @@
 <script>
 export default {
   name: "FeedbackAside",
+  data() {
+    return {
+      visible: false,
+    };
+  },
+  mounted() {
+    window.addEventListener("toggleFeedback", this.toggleFeedbackVisibility);
+  },
+  beforeUnmount() {
+    window.removeEventListener("toggleFeedback", this.toggleFeedbackVisibility);
+  },
+  methods: {
+    toggleFeedbackVisibility() {
+      this.visible = !this.visible;
+    },
+  },
 };
 </script>
