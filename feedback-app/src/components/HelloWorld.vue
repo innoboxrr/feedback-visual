@@ -1,18 +1,29 @@
 <script setup>
-import { ref } from 'vue'
+import { ref } from "vue";
 
 defineProps({
   msg: String,
-})
+});
 
-const count = ref(0)
+const count = ref(0);
+
+function showFeedback() {
+  window.dispatchEvent(new Event("toggleFeedback"));
+}
 </script>
 
 <template>
   <h1>{{ msg }}</h1>
 
   <div class="card">
-    <button type="button" @click="count++">count is {{ count }}</button>
+    <div class="flex flex-col items-center gap-4 mt-8">
+      <button
+        @click="showFeedback"
+        class="bg-blue-600 text-white px-4 py-2 rounded"
+      >
+        Mostrar Panel de Feedback
+      </button>
+    </div>
     <p>
       Edit
       <code>components/HelloWorld.vue</code> to test HMR
