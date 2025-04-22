@@ -20,7 +20,7 @@ export default {
   name: "FeedbackAside",
   data() {
     return {
-      visible: false,
+      visible: true,
     };
   },
   mounted() {
